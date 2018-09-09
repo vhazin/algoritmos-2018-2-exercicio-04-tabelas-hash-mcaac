@@ -2,7 +2,7 @@
 
 int main(){
 
-    int x,c,m,n,i,j,h,d,k;
+    int x,c,m,n,i,j,h,d,k,e;
     int matriz[100][200];
 
     scanf("%d",&n);
@@ -21,6 +21,7 @@ int main(){
         k=0;
         i=0;
         j=1;
+        e=n;
         while(k!=1){
             if(h==i){
                 if(matriz[i][j]==0){
@@ -43,14 +44,15 @@ int main(){
         }
         
         for(i=0;i<d;i++){
-          printf("\n");
+          
             for(j=0;j<200;j++){
                 if(matriz[i][j]==0){
                   if(i==0 && j==0){
-                    printf("\n%d -> ",matriz[i][j]);
+                    printf("%d -> ",matriz[i][j]);
+                    e--;
                   }
                   else{
-                printf("\\");
+                printf("\\\n");
                 goto OLA;}
                 }
                 else{
@@ -59,8 +61,10 @@ int main(){
             }
             OLA:;  
         }
-        printf("\n");
         
+        if(e>=1){
+          printf("\n");
+        }
         
         n--;
     } 
